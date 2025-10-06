@@ -1,0 +1,187 @@
+//The author of this beautiful code is Tamjid Ul Haque .
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define Bismillah() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+#define Alhamdulillah return 0 ; 
+#define Input  freopen("input.txt", "r", stdin);
+#define Output freopen("output.txt", "w", stdout);
+
+
+typedef long long ll;
+typedef long double ld;
+typedef vector<int> vi;
+typedef vector<bool> vb;
+typedef vector<string> vs;
+typedef vector<double> vd;
+typedef vector<long long> vll;
+typedef vector<vector<int>> vvi;
+typedef vector<vll> vvll;
+typedef vector<pair<int, int>> vpi;
+typedef vector<vpi> vvpi;
+typedef pair<int, int> pii;
+typedef pair<ll, ll> pll;
+typedef vector<pll> vpll;
+
+#define pb push_back 
+#define eb emplace_back
+#define ppb pop_back
+#define infinity LLONG_MAX
+#define aura LLONG_MIN
+#define F first
+#define S second
+#define endl '\n'
+#define gap ' '
+
+#define lin(k) ll k ; cin >> k ;
+#define sin(s) string s ; cin >> s ;
+#define llvec(v,n) vector<long long > v(n) ;
+#define llvecin(v,n) for(int i = 0 ; i < n ; i++) cin >> v[i] ;
+
+#define testloop int test; cin >> test; while (test--)
+#define loop(i,start,end) for(int i = start ; i < end ; ++i)
+#define tamjid(g) for(int i = 0 ; i < g ; ++i)
+
+#define len(x) int((x).size())
+#define all(n) n.begin(), n.end()
+#define rall(n) n.rbegin(), n.rend()
+#define nsort(v) sort(v.begin(),v.end());
+#define rsort(v) sort(v.rbegin(),v.rend());
+#define flip(v) reverse(v.begin(),v.end());
+
+
+#define show(z) cout << z << endl 
+#define printtwo(a,b) cout << a << " " << b << endl 
+#define display(vec) for(auto val:vec) cout << val << " " 
+#define printpair(vec) for(auto val:vec) cout << val.first << " " << val.second << endl 
+
+#define RemoveLeadingZeros(s) (s.erase(0, s.find_first_not_of('0')))
+#define eraser(s) s.erase(remove(s.begin(), s.end(), 'TheCharIwannaRemove'), s.end())
+#define countsetbits(x) __builtin_popcount(x)
+#define countsetbitsll(x) __builtin_popcountll(x)
+#define tamjid_shuffle(vec) shuffle(vec.begin(), vec.end(), mt19937(chrono::steady_clock::now().time_since_epoch().count())) ;
+
+#define make_unique(x) sort((x).begin(), (x).end()); (x).erase(unique((x).begin(), (x).end()), (x).end())
+
+#define isOdd(n) ((n) & 1) 
+#define isEven(n) (((n) & 1) == 0)
+bool powerof2(long long x) {
+    return (x > 0) && ((x & (x - 1)) == 0);
+}
+
+#define Sum(a)     ( accumulate ((a).begin(), (a).end(), 0ll))
+#define Boro(vec) *(max_element(vec.begin(),vec.end()))
+#define Chuto(vec) *(min_element(vec.begin(),vec.end())) 
+#define minidx(a)    ( min_element((a).begin(), (a).end()) - (a).begin())
+#define maxidx(a)    ( max_element((a).begin(), (a).end()) - (a).begin())
+#define lowb(a, x) ( lower_bound((a).begin(), (a).end(), (x)) - (a).begin())
+#define uppb(a, x) ( upper_bound((a).begin(), (a).end(), (x)) - (a).begin())
+
+ 
+/*const int MXSZ = 10000033 ;
+int Arr[MXSZ] ;
+
+bool isPerfectSquare(ll n){
+    ll root = sqrt(n) ;
+    if(root*1LL*root==n) return true ;
+    return false ;
+}
+
+bool isPrimeNumber(ll n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true;
+    if (n % 2 == 0 || n % 3 == 0) return false;
+    for (ll i = 5; i * i <= n; i += 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+    return true;
+}
+
+bool isBracketSequenceBalanced(const string &str) {
+    int level = 0;
+ 
+    for (auto &ch : str)
+        if (ch == '(') {
+            level++;
+        } else {
+            level--;
+ 
+            if (level < 0)
+                return false;
+        }
+ 
+    return level == 0;
+}
+
+long long factorial(long long n) {
+    long long res = 1;
+    for (int i = 2; i <= n; ++i) res *= i;
+    return res;
+}
+
+long long nCr(long long n, long long r) {
+    return factorial(n) / (factorial(r) * factorial(n - r));
+}
+
+long long nPr(long long n, long long r) {
+    return factorial(n) / factorial(n - r);
+}
+
+bool CodeforcesRanklist(pair<int, int>& a, pair<int, int>& b) {
+    if (a.first != b.first) return a.first > b.first;
+    return a.second < b.second;
+}
+
+ll lcm(ll a , ll b){
+    return a * b/__gcd(a,b) ;
+}
+
+ll power(ll x , ll n){
+    ll val = 1LL ; 
+    tamjid(n) val *= x ;
+    return val ;
+}
+
+ll rootOver(ll n){
+    ll x = sqrt(n) + 1 ;
+    if(x*x>n) x-- ; 
+    return x ;
+}
+
+*/
+
+
+/*
+    ___        __              __   ______          __        _____ __             __          __  __
+   /   | _____/ /___  ______ _/ /  / ____/___  ____/ /__     / ___// /_____ ______/ /______   / / / /__  ________
+  / /| |/ ___/ __/ / / / __ `/ /  / /   / __ \/ __  / _ \    \__ \/ __/ __ `/ ___/ __/ ___/  / /_/ / _ \/ ___/ _ \
+ / ___ / /__/ /_/ /_/ / /_/ / /  / /___/ /_/ / /_/ /  __/   ___/ / /_/ /_/ / /  / /_(__  )  / __  /  __/ /  /  __/
+/_/  |_\___/\__/\__,_/\__,_/_/   \____/\____/\__,_/\___/   /____/\__/\__,_/_/   \__/____/  /_/ /_/\___/_/   \___/
+ 
+*/
+#define Yes cout << "Yes" << endl 
+#define No cout << "No" << endl 
+#define yes cout << "YES" << endl  
+#define no cout << "NO" << endl
+#define sesh cout << '\n' 
+
+/*
+const double pi = 3.141592653589793238462643 ; 
+const int MOD = 1e9 + 7 ;
+*/
+
+/*Intuition :-
+*/
+
+void giveMeMyGloryBack() {
+
+}
+
+int main(){
+    Bismillah() ;
+
+    testloop giveMeMyGloryBack() ;
+
+    Alhamdulillah ;
+}
