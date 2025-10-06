@@ -1,0 +1,19 @@
+/*Intuition :-
+    Modular Arithmetic :-
+    1) (a+b) % x = (a % x + b % x) % x ;
+    2) (a*b) % x = ((a % x) * (b % x)) % x ;
+    3) (a-b) % x = ((a % x) - (b % x) + x) % x ;
+    4) (a/b) % x = (a % x) * ((1/b) % x ) % x ;
+    Ekhane 1 / b holo b er multiplicative inverse . Er calculation korar jonno
+    jei technique ta use hoy ta holo binary exponentiation, modular exponentiation .
+
+    Modular Arithmetic er proyojon hoy karon , Onek shomoy kuno ekta problem er 
+    answer calculation er shomoy answer onek boro hoye jay ja amader traditional
+    variable {int , long , long long} e store kora jay nah . Tokhon amra oi answer
+    ke int er range e rakhar jonno {998244353 , 1e9+7} type er prime number dara
+    mod kori . Kuno songkha ke jei songkha diye mod kora hoy answer tar cheye 1 kom
+    theke shuru kore 0 porjonto hote pare .
+
+    Jei number ta diye mod kora hoy oi number ta prime choose korar karon holo prime
+    number er modular multiplicative inverse nirnoy kora jay .
+*/
