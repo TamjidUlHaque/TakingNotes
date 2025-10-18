@@ -1,0 +1,21 @@
+/*Intuition :-
+    Ekhane proshner moddhe ekta 10^5 digit er songkha n , opor ekta songkha d diye divisable ki na 
+    ta check korte bola hoise .
+*/
+
+
+void giveMeMyGloryBack() {
+    string s;
+    cin >> s;
+    int d;
+    cin >> d;
+    int num = 0;
+    for (int i = 0; i < s.size(); i++) {
+        num = (num * 10) + (s[i] - '0');
+        num %= d;
+    }
+    if (num == 0)
+        cout << "divisible by d\n";
+    else
+        cout << "not divisible\n" ;
+}
