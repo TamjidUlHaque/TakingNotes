@@ -1,7 +1,21 @@
 //The author of this beautiful code is Tamjid Ul Haque .
 
 #include <bits/stdc++.h>
-using namespace std;
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace std ;
+using namespace __gnu_pbds;
+
+template<typename T>
+using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+// order_of_key(k) : no. of elements < k
+// *find_by_order(i) : value at index i (0-based)
+
+template<typename T>
+using ordered_multiset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+template<typename Key, typename Value>
+using ordered_map = tree<Key, Value, less<Key>, rb_tree_tag, tree_order_statistics_node_update>;
 
 #define Bismillah() ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 #define Alhamdulillah return 0 ; 
@@ -31,7 +45,7 @@ typedef vector<pll> vpll;
 #define aura LLONG_MIN
 #define F first
 #define S second
-#define endl '\n'
+#define sesh '\n'
 #define gap ' '
 
 #define lin(k) ll k ; cin >> k ;
@@ -53,8 +67,8 @@ typedef vector<pll> vpll;
 
 #define show(z) cout << z << endl 
 #define printtwo(a,b) cout << a << " " << b << endl 
-#define display(vec) for(auto val:vec) cout << val << " " 
-#define printpair(vec) for(auto val:vec) cout << val.first << " " << val.second << endl 
+#define display(vec) for(auto value:vec) cout << value << " " 
+#define printpair(vec) for(auto value:vec) cout << value.first << " " << value.second << endl 
 
 #define RemoveLeadingZeros(s) (s.erase(0, s.find_first_not_of('0')))
 #define eraser(s) s.erase(remove(s.begin(), s.end(), 'TheCharIwannaRemove'), s.end())
@@ -82,20 +96,17 @@ bool powerof2(long long x) {
 /*const int MXSZ = 10000033 ;
 int Arr[MXSZ] ;
 
-bool isPerfectSquare(ll n){
-    ll root = sqrt(n) ;
-    if(root*1LL*root==n) return true ;
-    return false ;
-}
 
-bool isPrimeNumber(ll n) {
-    if (n <= 1) return false;
-    if (n <= 3) return true;
-    if (n % 2 == 0 || n % 3 == 0) return false;
-    for (ll i = 5; i * i <= n; i += 6)
-        if (n % i == 0 || n % (i + 2) == 0)
-            return false;
-    return true;
+int rangeBitwiseOr(int L, int R) {
+    int mask = L ^ R; 
+    int rightestBit = 0;
+
+    while (mask) {
+        rightestBit = (rightestBit << 1) | 1;
+        mask >>= 1;
+    }
+
+    return R | rightestBit;
 }
 
 bool isBracketSequenceBalanced(const string &str) {
@@ -116,7 +127,7 @@ bool isBracketSequenceBalanced(const string &str) {
 
 long long factorial(long long n) {
     long long res = 1;
-    for (int i = 2; i <= n; ++i) res *= i;
+    for (ll i = 2; i <= n; ++i) res *= i;
     return res;
 }
 
@@ -133,20 +144,63 @@ bool CodeforcesRanklist(pair<int, int>& a, pair<int, int>& b) {
     return a.second < b.second;
 }
 
+ll AndOperationBetweenLtoR(ll num , ll ans){ 
+    ll rangeAndValue = 0LL ;
+    for(ll i = 62 ; i >= 0 ; i--){
+        ll mask = (1LL<<i) ;
+        if((num&mask) != (ans&mask)) break ;
+        else{
+            if((num&mask)) rangeAndValue |= mask ;
+        }
+    }
+    return rangeAndValue ;
+}
+
+
+ll gcd(ll a , ll b){
+    return b == 0 ? a : gcd(b,a%b) ;
+}
+
 ll lcm(ll a , ll b){
     return a * b/__gcd(a,b) ;
 }
 
 ll power(ll x , ll n){
-    ll val = 1LL ; 
-    tamjid(n) val *= x ;
-    return val ;
+    ll value = 1LL ; 
+    tamjid(n) value *= x ;
+    return value ;
 }
 
 ll rootOver(ll n){
     ll x = sqrt(n) + 1 ;
     if(x*x>n) x-- ; 
     return x ;
+}
+
+string decToBinary(ll n){
+    string s = string(61,'0') ;
+    for(ll i = 0 ; i < 61 ; i++){
+        ll mask = (1LL << i) ;
+        if(mask&n) s[i] = '1' ;
+    }
+    flip(s) ; RemoveLeadingZeros(s) ;
+    return s ; 
+}
+
+bool isPerfectSquare(ll n){
+    ll root = sqrt(n) ;
+    if(root*1LL*root==n) return true ;
+    return false ;
+}
+
+bool isPrimeNumber(ll n) {
+    if (n <= 1) return false;
+    if (n <= 3) return true;
+    if (n % 2 == 0 || n % 3 == 0) return false;
+    for (ll i = 5; i * i <= n; i += 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
+    return true;
 }
 
 */
@@ -164,24 +218,21 @@ ll rootOver(ll n){
 #define No cout << "No" << endl 
 #define yes cout << "YES" << endl  
 #define no cout << "NO" << endl
-#define sesh cout << '\n' 
 
 /*
 const double pi = 3.141592653589793238462643 ; 
 const int MOD = 1e9 + 7 ;
 */
 
-/*Intuition :-
-*/
-
-void giveMeMyGloryBack() {
-
+void IcpcDhakaRegionalist2025(){
+    ll n ; cin >> n ; vll vec(n) ; tamjid(n) cin >> vec[i] ;
+    
 }
 
 int main(){
     Bismillah() ;
 
-    testloop giveMeMyGloryBack() ;
+    testloop IcpcDhakaRegionalist2025() ;
 
     Alhamdulillah ;
 }
